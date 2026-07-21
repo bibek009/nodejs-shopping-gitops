@@ -1,6 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-
 metadata:
   name: shopping-app
   namespace: argocd
@@ -9,9 +8,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/username/nodejs-shopping.git
+    repoURL: https://github.com/bibek009/nodejs-shopping-gitops.git
     targetRevision: main
-    path: devops/k8s
+    path: shopping
 
   destination:
     server: https://kubernetes.default.svc
@@ -21,3 +20,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
+    syncOptions:
+      - CreateNamespace=true
