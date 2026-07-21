@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: shopping-app
   namespace: shopping
+
 spec:
   replicas: 2
 
@@ -17,21 +18,45 @@ spec:
 
     spec:
       containers:
-      - name: shopping-app
-        image: bibekbajagain/nodejs-shopping:latest
+        - name: shopping-app
 
-        ports:
-        - containerPort: 3000
+          image: bibekbajagain/nodejs-shopping:latest
 
-        env:
-        - name: MONGO_USER
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: username
+          imagePullPolicy: Always
 
-        - name: MONGO_PWD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: password
+          ports:
+            - containerPort: 3000
+
+          env:
+
+            # Secret
+            - name: MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: MONGO_USER
+
+            - name: MONGO_PWD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: MONGO_PWD
+
+            # ConfigMap
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: shopping-config
+                  key: MONGO_HOST
+
+            - name: MONGO_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: shopping-config
+                  key: MONGO_DB
+
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: shopping-config
+                  key: PORT

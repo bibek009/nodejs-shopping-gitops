@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shopping-config
+  namespace: shopping
+
+data:
+  MONGO_HOST: "cluster0.asyo5ql.mongodb.net"
+  MONGO_DB: "shop"
+  PORT: "3000"
