@@ -60,6 +60,10 @@ spec:
                   name: shopping-config
                   key: PORT
 
+          volumeMounts:
+            - name: images-storage
+              mountPath: /app/images
+
           readinessProbe:
             httpGet:
               path: /
@@ -81,3 +85,8 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
+
+      volumes:
+        - name: images-storage
+          persistentVolumeClaim:
+            claimName: shopping-images-pvc
