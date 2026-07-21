@@ -60,6 +60,9 @@ Kubernetes Cluster
 MetalLB LoadBalancer
     │
     ▼
+Host NGINX Reverse Proxy
+    │
+    ▼
 End Users
 ```
 
@@ -143,7 +146,6 @@ nodejs-shopping-gitops/
 -   Namespaces
 -   ConfigMaps
 -   Secrets
--   Resource Requests & Limits
 -   Readiness Probes
 -   Liveness Probes
 -   Rolling Updates
@@ -170,10 +172,10 @@ nodejs-shopping-gitops/
 
 ## Persistent Upload Storage
 
-Application uploads are stored under:
+Application uploads are stored under hosts as:
 
 ``` text
-/app/images
+/data/shopping/images
 ```
 
 Because the lab cluster does not use a distributed storage solution
@@ -202,7 +204,6 @@ storage solution.
 -   Docker
 -   ArgoCD
 -   GitHhookub Webs
--   Infrastructure as Code
 -   MetalLB
 -   Reverse Proxy
 -   ConfigMaps & Secrets
