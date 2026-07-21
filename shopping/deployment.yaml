@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: shopping-app
-          image: bibekbajagain/nodejs-shopping:latest
+          image: bibekbajagain/nodejs-shopping:5
           imagePullPolicy: Always
 
           ports:
