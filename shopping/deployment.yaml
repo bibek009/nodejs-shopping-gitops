@@ -18,7 +18,12 @@ spec:
 
     spec:
       containers:
+<<<<<<< HEAD
         - name: shopping-app
+=======
+      - name: shopping-app
+        image: bibekbajagain/nodejs-shopping:4
+>>>>>>> e8e8312c7938644f3abff87657202779338a6e03
 
           image: bibekbajagain/nodejs-shopping:latest
 
