@@ -1,14 +1,14 @@
 # NodeJS Shopping Application - GitOps CI/CD on Kubernetes
 
 # URLS:
-Repo1, Sample Forked Project Link: https://github.com/bibek009/nodejs-shopping.git
-Repo2, GitOps config Link: https://github.com/bibek009/nodejs-shopping-gitops.git
-Jenkins CI Server Link: https://jenkins.bibekbajagain.com.np
-ArgoCD CD Server Link: https://argocd.bibekbajagain.com.np
-K8s Cluster: Behind Reverse Proxy in private IPs.
-Deployed App Public link (k8s service => MetalLB Allocated IP => NGINX Reverse Proxy) : https://shopping.bibekbajagain.com.np
+- Repo1, Sample Forked Project Link: https://github.com/bibek009/nodejs-shopping.git 
+- Repo2, GitOps config Link: https://github.com/bibek009/nodejs-shopping-gitops.git
+- Jenkins CI Server Link: https://jenkins.bibekbajagain.com.np
+- ArgoCD CD Server Link: https://argocd.bibekbajagain.com.np
+- K8s Cluster: Behind Reverse Proxy in private IPs.
+- Deployed App Public link (k8s service => MetalLB Allocated IP => NGINX Reverse Proxy) : https://shopping.bibekbajagain.com.np
 
-ALl the server resides privately, required ports exposed publicly through reverse proxy.
+All the server resides privately, required ports exposed publicly through reverse proxy.
 
  
 ## Project Overview
